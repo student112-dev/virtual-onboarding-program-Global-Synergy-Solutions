@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# GSS Virtual Onboarding System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a fully functional Virtual Onboarding Platform developed for Global Synergy Solutions (GSS), a multinational organization operating in over 20 countries. The system is designed to onboard a diverse group of 50+ new employees across virtual teams with a strong focus on intercultural sensitivity, productivity, and alignment with company goals.
 
-## Available Scripts
+This system was developed as part of the M503 Behavioral Competencies in Virtual Teams assessment.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Employee Portal (React Frontend)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Secure registration with timezone and language input
+- JWT-based login and authentication
+- Personalized onboarding schedule for each employee:
+  - Week 1: Welcome & Orientation
+  - Week 2: Technical Tools Setup
+  - Week 3: Cultural Sensitivity
+  - Week 4: Team Integration
+- Submit feedback with rating (1 to 5)
+- Track weekly progress with "Mark as Completed" feature
 
-### `npm test`
+### Admin Portal
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Admin users can:
 
-### `npm run build`
+- View all registered users with their timezone and language
+- View all feedback submitted by employees
+- View onboarding progress by employee and by week
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Admin Login Credentials:**
+Username: admin112
+Password: 12345
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Frontend: React.js, React Router, Bootstrap, Axios
+- Backend: Node.js, Express.js, MongoDB, JWT Authentication
+- Database: MongoDB Atlas
+- Optional Deployment: Vercel (frontend), Render or Railway (backend)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Folder Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+project-root/
+├── backend/
+│ ├── controllers/
+│ ├── models/
+│ ├── routes/
+│ ├── middleware/
+│ ├── server.js
+│ └── .env.example
+│
+├── frontend/
+│ ├── src/
+│ │ ├── components/
+│ │ ├── pages/
+│ │ ├── api.js
+│ │ ├── App.js
+│ │ └── index.js
+│ └── public/
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## How to Run Locally
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Backend
 
-### Code Splitting
+1. Navigate to the backend folder:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+cd backend
+npm install
+cp .env.example .env
+```
+2. Set the following in your .env file:
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
 
-### Analyzing the Bundle Size
+4. Start the backend server:
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Frontend
+1. Navigate to the frontend folder:
+cd frontend
+npm install
 
-### Making a Progressive Web App
+2. Start the frontend app:
+   npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
